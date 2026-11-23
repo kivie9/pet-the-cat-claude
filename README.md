@@ -1,6 +1,6 @@
 # Vuốt mèo (pet-the-cat-claude)
 
-Website vuốt ve mèo dùng ảnh thật: 5 bé mèo nằm trên ghế lanh cạnh cửa sổ, một bàn tay và cánh tay thật. Lông gợn theo tay bằng WebGL, đuôi vẫy, mèo thở, gừ gừ.
+Website vuốt ve mèo dùng ảnh thật: 8 bé mèo nằm ngủ trên đệm và ghế vải, một bàn tay và cánh tay thật. Lông gợn theo tay bằng WebGL, đuôi vẫy, mèo thở, gừ gừ.
 
 Chỉ gồm HTML, CSS và JavaScript thuần, không thư viện. Ảnh nằm trong `images/` (WebP, mỗi ảnh khoảng 300 KB).
 
