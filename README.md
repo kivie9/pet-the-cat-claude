@@ -1,4 +1,4 @@
-# Vuốt mèo
+# Vuốt mèo (pet-the-cat-claude)
 
 Website vuốt ve mèo dùng ảnh thật: 5 bé mèo nằm trên ghế lanh cạnh cửa sổ, một bàn tay và cánh tay thật. Lông gợn theo tay bằng WebGL, đuôi vẫy, mèo thở, gừ gừ.
 
@@ -17,7 +17,9 @@ Chỉ gồm HTML, CSS và JavaScript thuần, không thư viện. Ảnh nằm tr
 Phải chạy qua một web server (không mở thẳng file `index.html`), vì trang dùng ES module và WebGL.
 
 ```powershell
-python -m http.server 5180 --directory cat-petting
+git clone https://github.com/kivie9/pet-the-cat-claude.git
+cd pet-the-cat-claude
+python -m http.server 5180
 ```
 
 Mở http://localhost:5180
@@ -39,14 +41,14 @@ Mở http://localhost:5180
 
 ## Deploy
 
-Đây là site tĩnh, thư mục `cat-petting` là thư mục gốc để deploy. Không cần bước build.
+Đây là site tĩnh, gốc của kho (`pet-the-cat-claude`) cũng chính là thư mục để deploy. Không cần bước build.
 
 | Nơi host | Cách làm |
 | --- | --- |
-| Cloudflare Pages | Kết nối repo, Build command để trống, Output directory: `cat-petting` |
-| Netlify | Kéo thả thư mục `cat-petting` vào https://app.netlify.com/drop, hoặc Publish directory: `cat-petting` |
-| Vercel | Import repo, Framework: Other, Output Directory: `cat-petting` |
-| GitHub Pages | Đưa nội dung thư mục lên một nhánh (ví dụ `gh-pages`) hoặc dùng GitHub Actions deploy thư mục này |
+| Cloudflare Pages | Kết nối repo, Build command để trống, Output directory: `/` (để trống hoặc `.`) |
+| Netlify | Kéo thả thư mục kho vào https://app.netlify.com/drop, hoặc Publish directory: `.` |
+| Vercel | Import repo, Framework: Other, Output Directory: `.` |
+| GitHub Pages | Settings, Pages, chọn nhánh `main` và thư mục `/ (root)` |
 
 `_headers` (Cloudflare Pages và Netlify đọc được) đặt cache: HTML luôn kiểm tra bản mới, các file còn lại cache 1 giờ. Host đã nén gzip/brotli sẵn nên không cần tự nén.
 
@@ -64,6 +66,6 @@ Mở http://localhost:5180
 - `style.css`: giao diện chữ, nút, tay áo
 - `scene.js`: hình dáng mèo, giống mèo, vẽ lông, vải ghế. Thêm giống mới bằng cách thêm một mục vào `RAW`.
 - `gl.js`: bộ vẽ WebGL (shader) và đường dự phòng canvas 2D
-- `hand.js`: bàn tay SVG
+- `hand.js`: nạp ảnh bàn tay và tay áo, cử động theo tay
 - `audio.js`: tiếng gừ gừ và tiếng meo
 - `app.js`: logic vuốt, tâm trạng, lưới lông gợn, lưu lựa chọn vào `localStorage`
